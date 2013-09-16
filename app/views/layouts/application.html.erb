@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Bikeshare</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
    <%= analytics_init if Rails.env.production? %>
+   <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
