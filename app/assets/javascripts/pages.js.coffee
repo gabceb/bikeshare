@@ -4,9 +4,10 @@
 
 initialize = ()=>
 	mapOptions = {
-	  center: new google.maps.LatLng(-34.397, 150.644),
-	  zoom: 8,
+	  center: new google.maps.LatLng(37.33067, -121.901593),
+	  zoom: 10,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	  mapTypeControl: false
 	}
 	
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)

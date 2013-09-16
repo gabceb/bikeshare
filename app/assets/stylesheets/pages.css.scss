@@ -2,9 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map-canvas
+html, body, #map-canvas
 {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+}
+
+.github-fork
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	z-index: 10;
 }
