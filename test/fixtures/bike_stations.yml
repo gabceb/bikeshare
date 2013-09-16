@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  original_id: 1
+  name: MyString
+  totalDocks: 1
+  stAddress1: MyString
+  stAddress2: MyString
+  city: MyString
+  postalCode: MyString
+  location: MyString
+  landMark: MyString
+
+two:
+  original_id: 1
+  name: MyString
+  totalDocks: 1
+  stAddress1: MyString
+  stAddress2: MyString
+  city: MyString
+  postalCode: MyString
+  location: MyString
+  landMark: MyString
