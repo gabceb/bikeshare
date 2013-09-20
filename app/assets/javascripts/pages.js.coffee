@@ -10,8 +10,24 @@ initialize = ()=>
 	  mapTypeControl: false
 	}
 	
-	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
+	window.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
+
+	requestUserLocation()
 
 	return
+
+onUserLocationSuccess = (location)=>
+	console.log "User location Latitude: #{location.coords.latitude} - Longitude: #{location.coords.longitude}"
+	window.map.setCenter(new google.maps.LatLng(location.coords.latitude, location.coords.longitude))
+	window.map.setZoom(14)
+
+	return
+
+onUserLocationError = ()=>
+	alert "An error happened while getting your location"
+
+requestUserLocation = ()=>
+	if navigator.geolocation
+		navigator.geolocation.getCurrentPosition(onUserLocationSuccess, onUserLocationError);
 
 google.maps.event.addDomListener(window, 'load', initialize)
