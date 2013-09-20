@@ -2,7 +2,7 @@ class CreateBikeStations < ActiveRecord::Migration
   def change
     create_table :bike_stations do |t|
       t.integer :original_id
-      t.string :name, :null => false
+      t.string :stationName, :null => false
       t.integer :totalDocks
       t.string :stAddress1
       t.string :stAddress2

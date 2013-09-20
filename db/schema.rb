@@ -11,16 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916020924) do
+ActiveRecord::Schema.define(version: 20130920195226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
   enable_extension "postgis"
 
+  create_table "bike_station_statuses", force: true do |t|
+    t.integer  "original_key"
+    t.string   "statusValue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bike_station_time_entries", force: true do |t|
+    t.integer  "availableDocks"
+    t.integer  "status_id"
+    t.integer  "availableBikes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "import_timestamp"
+    t.integer  "bike_station_id"
+  end
+
   create_table "bike_stations", force: true do |t|
     t.integer  "original_id"
-    t.string   "name",                                                                 null: false
+    t.string   "stationName",                                                          null: false
     t.integer  "totalDocks"
     t.string   "stAddress1"
     t.string   "stAddress2"

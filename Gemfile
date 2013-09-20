@@ -41,6 +41,9 @@ gem 'google-analytics-rails'
 gem 'thin'
 gem 'unicorn'
 
+gem 'httparty'
+gem 'colorize'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  availableDocks: 1
+  status_id: 1
+  availableBikes: 1
+
+two:
+  availableDocks: 1
+  status_id: 1
+  availableBikes: 1
