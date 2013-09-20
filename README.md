@@ -3,7 +3,7 @@ www.bikesharemap.com
 
 www.bikesharemap.com is aimed to create a better version of the [ Bay Area Bike Share map](http://bayareabikeshare.com/stations).
 
-Tenative Features
+Tentative Features
 ------
 
 - Better visualization of bike stations
