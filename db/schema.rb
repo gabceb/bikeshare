@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20130920195226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
-  enable_extension "postgis"
 
   create_table "bike_station_statuses", force: true do |t|
     t.integer  "original_key"
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20130920195226) do
 
   create_table "bike_stations", force: true do |t|
     t.integer  "original_id"
-    t.string   "stationName",                                                          null: false
+    t.string   "stationName",                          null: false
     t.integer  "totalDocks"
     t.string   "stAddress1"
     t.string   "stAddress2"
@@ -45,7 +44,8 @@ ActiveRecord::Schema.define(version: 20130920195226) do
     t.string   "postalCode"
     t.string   "location"
     t.string   "landmark"
-    t.spatial  "latLong",     limit: {:srid=>4326, :type=>"point", :geographic=>true}, null: false
+    t.decimal  "latitude",    precision: 10, scale: 6
+    t.decimal  "longitude",   precision: 10, scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
   end

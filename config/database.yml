@@ -15,11 +15,9 @@
 # gem 'pg'
 #
 development:
-  adapter: postgis
+  adapter: postgresql
   database: bikeshare
   encoding: unicode
-  postgis_extension: postgis
-  schema_search_path: 'public, postgis'
   pool: 5
   username: bikeshare
   password: bikeshare

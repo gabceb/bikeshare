@@ -35,7 +35,8 @@ def find_or_create_bike_station station_json_hash
 
   # If this is a new record then add the lat long and original_id
   if !station.persisted?
-    station.latLong = "POINT(#{station_json_hash['latitude']} #{station_json_hash['longitude']})"
+    station.latitude = station_json_hash['latitude'].to_d
+    station.longitude = station_json_hash['longitude'].to_d
     station.original_id = station_json_hash["id"]
   end
 
