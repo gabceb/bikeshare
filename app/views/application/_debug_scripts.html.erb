@@ -1,0 +1,3 @@
+<%= javascript_tag do %>
+	window.debug = <%= Rails.env.production? ? "false" : "true" %>;
+<% end %>

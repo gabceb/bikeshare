@@ -2,17 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body, #map-canvas
+$main-toolbar-height: 45px;
+
+html, body, .canvas-map, .bike-share-index
 {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	position: relative;
+}
+
+.bike-share-index
+{
+	.main-toolbar
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: $main-toolbar-height;
+		z-index: 11;
+		background-color: white;
+		opacity: 0.95;
+	}
 }
 
 .github-fork
 {
 	position: absolute;
-	top: 0;
+	top: $main-toolbar-height;
 	right: 0;
 	border: 0;
 	z-index: 10;
