@@ -10,6 +10,9 @@ jQuery ->
 			# Append el to container:
 			$(@options.container).append( @el )
 
+			@collection.on("add", @addBikeStation)
+			@collection.on("add", @removeBikeStation)
+
 			return @
 
 		render: () =>
@@ -22,6 +25,26 @@ jQuery ->
 
 		unrender: () =>
 			@$el.remove()
+			return
+
+		addBikeStation: (bike_station) =>
+
+			lat_long = bike_station.lat_long
+			
+			station_position = new google.maps.LatLng(lat_long['latitude'], lat_long['longitude'])
+
+			@addMarker(station_position)
+			
+			return
+
+		addMarker: (position, options) =>
+			marker = new google.maps.Marker({
+				map: @map,
+				animation: google.maps.Animation.DROP,
+				position: position
+			})
+
+		removeBikeStation: (bike_station) =>
 			return
 
 		initialize_map: ()=>

@@ -21,8 +21,17 @@ jQuery ->
 			return @
 
 		index: ()=>
-			view = new BikeShareMapIndexView({container : $("body") })
+
+			api_bike_stations = new ApiBikeStationCollection(null , { model: BikeStation })
+			
+			view = new BikeShareMapIndexView(
+				container : $("body"),
+				collection : api_bike_stations
+			)
+			
 			view.render()
+
+			api_bike_stations.fetch()
 			return
 
 	exports.BikeShareMapRouter = BikeShareMapRouter

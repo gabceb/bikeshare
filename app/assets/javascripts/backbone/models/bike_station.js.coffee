@@ -22,6 +22,13 @@ jQuery ->
 			return null
 
 		initialize: ()=>
-			alert "Im being initialized!"
+			return @
+
+		# Returns an object of lat/long as floats
+		lat_long: () =>
+			lat_i = parseFloat(@get('latitude'))
+			long_i = parseFloat(@get('longitude'))
+
+			return { latitude: lat_i, longitude: long_i }
 			
 	exports.BikeStation = BikeStation
